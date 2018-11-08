@@ -6,5 +6,5 @@ This project contains examples of load scripts for REST and SOAP services.
 
 For use this examples you need installed Scala SDK and SBT.
 
-gatling:testOnly NameSimulationClass
+For starting test use `gatling:testOnly NameSimulationClass`
 

@@ -17,15 +17,23 @@ package object RestMethods {
     .userAgentHeader("Apache-HttpClient/4.1.1 (java 1.5)")
 
 
-  def firstRestRequest() =
-    exec(http("firstRequest")
+  def firstGetRequest() =
+    exec(http("getRequest")
       .get("planets/1/")
       .headers(header)
       .body(StringBody("")).asJSON
       //      .body(ElFileBody("src/test/requests_body/json/firstRequest.json")).asJSON  //useful for post requests
-        .check(status.is(200))
-        .check(jsonPath("$.name").is("Tatooine"))
+      .check(status.is(200))
+      .check(jsonPath("$.name").is("Tatooine"))
     )
+
+//  def firstPostRequest() =
+//    exec(http("postRequest")
+//      .post("planets")
+//      .headers(header)
+//      .body(ElFileBody("src/test/requests_body/json/firstRequest.json")).asJSON //useful for post requests
+//      .check(status.is(200))
+//    )
 
 
 }

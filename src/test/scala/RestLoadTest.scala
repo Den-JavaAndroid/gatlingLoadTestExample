@@ -14,7 +14,8 @@ class RestLoadTest extends Simulation{
 
   //complete scenario
   val firstScenario  = scenario("firstScenario")
-    .exec(RestMethods.firstRestRequest())
+    .exec(RestMethods.firstGetRequest())
+//    .exec(RestMethods.firstPostRequest())
 
   //execute scenario
   setUp(
